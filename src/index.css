@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme static {
+    --color-primary: rgb(252, 195, 68);
+    --color-primary-dark: rgb(242, 185, 58);
+}
+
+html {
+    scroll-behavior: smooth;
+}
