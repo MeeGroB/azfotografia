@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 
-import alejandroImg from '../assets/alejandro.webp';
+import alejandroImg from '../assets/alejando2.webp';
 
 const About = () => {
 
