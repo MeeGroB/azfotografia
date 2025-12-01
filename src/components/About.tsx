@@ -129,7 +129,7 @@ const About = () => {
 
                 {/* Flecha */}
                 <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                  <ArrowRight className='text-5xl text-primary/30' />
+                  <ArrowRight className='w-8 h-8 text-primary/30' />
                 </div>
               </div>
 
@@ -149,7 +149,7 @@ const About = () => {
 
                 {/* Flecha */}
                 <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                  <ArrowRight className='text-5xl text-primary/30' />
+                  <ArrowRight className='w-8 h-8 text-primary/30' />
                 </div>
               </div>
 
@@ -169,7 +169,7 @@ const About = () => {
 
                 {/* Flecha */}
                 <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                  <ArrowRight className='text-5xl text-primary/30' />
+                  <ArrowRight className='w-8 h-8 text-primary/30' />
                 </div>
               </div>
 
@@ -187,10 +187,7 @@ const About = () => {
                   </p>
                 </div>
 
-                {/* Flecha */}
-                <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                  <ArrowRight className='text-5xl text-primary/30' />
-                </div>
+                
               </div>
 
 
