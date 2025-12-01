@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
 
-import heroImg from '../assets/hero.webp'
+import heroImg from '../../../assets/hero.webp'
 
 const Hero = () => {
   return (

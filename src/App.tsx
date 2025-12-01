@@ -1,25 +1,33 @@
 import { useState } from 'react';
-import { Route, Routes } from 'react-router-dom'
+import { BrowserRouter, useLocation } from 'react-router-dom';
 
 import Navbar from './components/Navbar'
-import Hero from './components/Hero';
-import About from './components/About';
+import { AppRoutes } from './router';
+
+
+function AppContent() {
+
+  const location = useLocation();
+  
+  return (
+    <>
+      <Navbar />
+      <AppRoutes />
+    
+    </>
+  )
+}
+
+
 
 function App() {
 
 
   return (
-    <>
-      <Navbar />
-      <Routes>
-        <Route path='/' element={
-          <>
-            <Hero />
-            <About />
-          </>
-        } />
-      </Routes>
-    </>
+    <BrowserRouter basename='/'>
+      <AppContent />
+    
+    </BrowserRouter>
   )
 }
 
