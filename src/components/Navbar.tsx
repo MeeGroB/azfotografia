@@ -4,17 +4,11 @@ import logoImg from '../assets/logo.webp'
 
 const Navbar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [isClosing, setIsClosing] = useState(false);
+    
     const [isScrolled, setIsScrolled] = useState(false);
     const isHomePage = location.pathname === '/';
 
-    const handleNavClick = () => {
-        setIsClosing(true);
-        setTimeout(() => {
-            setMobileMenuOpen(false);
-            setIsClosing(false);
-        }, 300);
-    }
+
 
     useEffect(() => {
         const handleScroll = () => {

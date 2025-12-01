@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { BrowserRouter, useLocation } from 'react-router-dom';
+
+import { BrowserRouter } from 'react-router-dom';
 
 import Navbar from './components/Navbar'
 import { AppRoutes } from './router';
@@ -7,7 +7,7 @@ import { AppRoutes } from './router';
 
 function AppContent() {
 
-  const location = useLocation();
+
   
   return (
     <>
