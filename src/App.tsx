@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import Navbar from './components/Navbar'
 import { AppRoutes } from './router';
+import Footer from './components/Footer';
 
 
 function AppContent() {
@@ -13,7 +14,7 @@ function AppContent() {
     <>
       <Navbar />
       <AppRoutes />
-    
+      <Footer />
     </>
   )
 }
