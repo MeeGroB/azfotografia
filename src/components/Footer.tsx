@@ -1,33 +1,33 @@
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import { FaInstagram, FaYoutube, FaFacebook, FaTiktok   } from "react-icons/fa";
 
 import logoImg from '../assets/logo.webp';
 
 const Footer = () => {
 
-    const location = useLocation();
+    // const location = useLocation();
 
-    const scrollToSection = (sectionId: string) => {
-        if(location.pathname !== '/') {
-            window.REACT_APP_NAVIGATE('/');
-            setTimeout(() => {
-                const element = document.getElementById(sectionId);
+    // const scrollToSection = (sectionId: string) => {
+    //     if(location.pathname !== '/') {
+    //         window.REACT_APP_NAVIGATE('/');
+    //         setTimeout(() => {
+    //             const element = document.getElementById(sectionId);
 
-                if(element) {
-                    element.scrollIntoView({ behavior: 'smooth'})
-                }
-            }, 1000);
-        } else {
-            const element = document.getElementById(sectionId);
-            if(element) {
-                element.scrollIntoView({ behavior: 'smooth'})
-            }
-        }
-    }
+    //             if(element) {
+    //                 element.scrollIntoView({ behavior: 'smooth'})
+    //             }
+    //         }, 1000);
+    //     } else {
+    //         const element = document.getElementById(sectionId);
+    //         if(element) {
+    //             element.scrollIntoView({ behavior: 'smooth'})
+    //         }
+    //     }
+    // }
 
-    const navigateToPage = (path: string)=> {
-        window.REACT_APP_NAVIGATE(path)
-    }
+    // const navigateToPage = (path: string)=> {
+    //     window.REACT_APP_NAVIGATE(path)
+    // }
 
   return (
     <footer className="bg-linear-to-br from-gray-900 via-gray-800 to bg-gray-900 text-white">
