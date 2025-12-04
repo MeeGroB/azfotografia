@@ -56,7 +56,7 @@ const Navbar = () => {
 
                         <a href="/#albums" className={`font-medium transition-colors cursor-pointer whitespace-nowrap ${linkClasses}`}>Álbumes</a>
 
-                        <a href="/#contacto" className='bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-dark transition-colors cursor-pointer whitespace-nowrap'>Contacto</a>
+                        <a href="/#contact" className='bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-dark transition-colors cursor-pointer whitespace-nowrap'>Contacto</a>
                     </div>
 
                     <button
@@ -92,7 +92,7 @@ const Navbar = () => {
                             <a href="/#albums" className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
                             Álbumes</a>
 
-                            <a href="/#contacto" className='block w-full bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-dark transition-colors cursor-pointer whitespace-nowrap'>
+                            <a href="/#contact" className='block w-full bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-dark transition-colors cursor-pointer whitespace-nowrap'>
                             Contacto</a>
                         </div>
 

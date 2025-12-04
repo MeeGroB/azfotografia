@@ -3,6 +3,7 @@ import About from "./components/About";
 import Gallery from "./components/Gallery";
 import Services from "./components/Services";
 import Albums from "./components/Albums";
+import Contact from "./components/Contact";
 
 export default function HomePage() {
     return (
@@ -12,6 +13,7 @@ export default function HomePage() {
             <Gallery />
             <Services />
             <Albums />
+            <Contact />
         </main>
     )
 }
