@@ -1,4 +1,7 @@
-import React, { useState } from "react"
+import { Mail, Phone } from "lucide-react";
+import React, { useState } from "react";
+
+import contactImg from "../../../assets/contactImage.webp";
 
 
 const Contact = () => {
@@ -93,7 +96,7 @@ const Contact = () => {
                                     value={formData.name}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-sm"
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-sm bg-white"
                                 />
                             </div>
 
@@ -110,7 +113,7 @@ const Contact = () => {
                                         value={formData.email}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-sm"
+                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-sm bg-white"
                                     />
                                 </div>
 
@@ -126,7 +129,7 @@ const Contact = () => {
                                         value={formData.phone}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-sm"
+                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-sm bg-white"
                                     />
                                 </div>
                             </div>
@@ -135,7 +138,7 @@ const Contact = () => {
                                 <div>
                                     <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-2">
                                         Fecha del evento {""}
-                                        <span className="text-primary text-lg">(*)</span>
+                                        <span className="text-primary">(*)</span>
                                     </label>
                                     <input
                                         type="date"
@@ -144,7 +147,7 @@ const Contact = () => {
                                         value={formData.date}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-sm"
+                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-sm bg-white"
                                     />
                                 </div>
 
@@ -158,7 +161,7 @@ const Contact = () => {
                                         value={formData.service}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-sm pr-8"
+                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-sm pr-8 bg-white"
                                     >
                                         <option value="">Seleccionar...</option>
                                         <option value="wedding">Fotografía de Bodas</option>
@@ -180,7 +183,7 @@ const Contact = () => {
                                     required
                                     maxLength={500}
                                     rows={5}
-                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none text-sm"
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none text-sm bg-white"
                                 >
 
                                 </textarea>
@@ -215,6 +218,51 @@ const Contact = () => {
 
                         </form>
                     </div>
+
+
+                    <div>
+                        <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+                            <h3 className="text-2xl font-serif mb-6 text-gray-900">
+                                Información de Contacto
+                            </h3>
+
+                            <div className="space-y-6">
+                                <div className="flex items-start gap-4">
+                                    <div className="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full shrink-0">
+                                        <Phone className="text-primary w-6 h-6" />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-medium text-gray-900 mb-1">
+                                            Teléfono
+                                        </h4>
+                                        <a href="https://api.whatsapp.com/send/?phone=51997831816&text=Hola%21+Necesito+m%C3%A1s+informaci%C3%B3n.&type=phone_number&app_absent=0" target="_blank" className="text-gray-600 hover:text-primary transition-colors duration-300 cursor-pointer">
+                                            +51 997 831 816
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-start gap-4">
+                                    <div className="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full shrink-0">
+                                        <Mail className="text-primary w-6 h-6" />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-medium text-gray-900 mb-1">
+                                            Email
+                                        </h4>
+                                        <a href="mailto:contacto@azfotografia.com" target="_blank" className="text-gray-600 hover:text-primary transition-colors duration-300 cursor-pointer">
+                                            contacto@azfotografia.com
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div className="lg:hidden mt-6 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow">
+                    <img src={contactImg} alt="Pareja" />
                 </div>
 
             </div>
