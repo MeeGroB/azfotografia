@@ -8,6 +8,18 @@ const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const isHomePage = location.pathname === '/';
 
+    // useEffect(()=> {
+    //     if(mobileMenuOpen) {
+    //         document.body.style.overflow = 'hidden';
+    //     } else {
+    //         document.body.style.overflow = 'unset';
+    //     }
+
+    //      return ()=> {
+    //         document.body.style.overflow = 'unset';
+    //      }
+    // }, [mobileMenuOpen]);
+
 
 
     useEffect(() => {
@@ -73,26 +85,26 @@ const Navbar = () => {
                 {/* Mobile Menu */}
                 {mobileMenuOpen && (
                     <div className="md:hidden bg-white border-t border-gray-200">
-                        <div className="px-4 py-4 space-y-3">
-                            <a href="/#home" className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
+                        <div className="px-4 py-4 space-y-9 flex flex-col items-center">
+                            <a href="/#home" onClick={() => setMobileMenuOpen(false)} className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
                             Inicio</a>
 
-                            <a href="/#about" className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
+                            <a href="/#about" onClick={() => setMobileMenuOpen(false)} className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
                             Sobre Mi</a>
 
-                            <a href="/#services" className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
+                            <a href="/#services" onClick={() => setMobileMenuOpen(false)} className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
                             Servicios</a>
 
-                            <a href="/pricing" className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
+                            <a href="/pricing" onClick={() => setMobileMenuOpen(false)} className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
                             Precios</a>
 
-                            <a href="/#gallery" className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
+                            <a href="/#gallery" onClick={() => setMobileMenuOpen(false)} className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
                             Galería</a>
 
-                            <a href="/#albums" className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
+                            <a href="/#albums" onClick={() => setMobileMenuOpen(false)} className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
                             Álbumes</a>
 
-                            <a href="/#contact" className='block w-full bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-dark transition-colors cursor-pointer whitespace-nowrap'>
+                            <a href="/#contact" onClick={() => setMobileMenuOpen(false)} className='inline-block w-auto bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-dark transition-colors cursor-pointer whitespace-nowrap text-center mx-auto'>
                             Contacto</a>
                         </div>
 
