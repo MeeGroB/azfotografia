@@ -7,6 +7,8 @@ const WeddingPhotographyPage = lazy(()=> import('../pages/services/wedding-photo
 
 const WeddingVideoPage = lazy(()=> import('../pages/services/wedding-video/page'));
 
+const Pricingpage = lazy(()=> import('../pages/pricings/page'))
+
 
 const routes: RouteObject[] = [
     {
@@ -27,6 +29,11 @@ const routes: RouteObject[] = [
     {
         path: 'servicios/video-bodas',
         element: <WeddingVideoPage />
+    },
+
+    {
+        path: '/precios',
+        element: <Pricingpage />
     }
 ];
 
