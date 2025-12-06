@@ -5,7 +5,7 @@ import fotoMC3 from "../assets/albumsData/MariaCarlos/foto3.webp";
 import fotoMC4 from "../assets/albumsData/MariaCarlos/foto4.webp";
 import fotoMC5 from "../assets/albumsData/MariaCarlos/foto5.webp";
 import fotoMC6 from "../assets/albumsData/MariaCarlos/foto6.webp";
-import fotoMC7 from "../assets/albumsData/MariaCarlos/foto6.webp";
+import fotoMC7 from "../assets/albumsData/MariaCarlos/foto7.webp";
 
 import fotoAR1 from "../assets/albumsData/AnaRoberto/foto1.webp";
 import fotoAR2 from "../assets/albumsData/AnaRoberto/foto2.webp";

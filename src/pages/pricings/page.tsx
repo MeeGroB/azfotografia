@@ -8,7 +8,7 @@ import pricingsImg from "../../assets/services/pricings.webp";
 
 import weddingImg from "../../assets/services/wedding.webp";
 import videoImg from "../../assets/services/videoboda.webp";
-import preWeddingImg from "../../assets/services/preboda.webp"
+import preWeddingImg from "../../assets/services/preboda.webp";
 
 
 const Pricingpage = () => {
