@@ -60,7 +60,7 @@ const Pricingpage = () => {
       title: "Sesión Pre Boda",
       icon: Camera,
       priceRange: "$400 - $900",
-      link: "/servicios/sesion-pre-boda",
+      link: "/servicios/pre-boda",
       image: preWeddingImg
 
     }
