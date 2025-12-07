@@ -109,8 +109,24 @@ const PreweddingSessionPage = () => {
                 <div className="container mx-auto px-4 relative z-10 text-white">
                     <div className="max-w-3xl">
                         <Link
-                            to="/#services"
+                            to="/"
                             className='inline-flex items-center gap-2 text-white/90 hover:text-white mb-6 transition-colors cursor-pointer whitespace-nowrap'
+                            onClick={()=> {
+                                setTimeout(() => {
+                                    const element = document.getElementById("services");
+
+                                    if(element) {
+                                        const offset = 80;
+                                        const elementPosition = element.getBoundingClientRect().top;
+                                        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                                        window.scrollTo({
+                                            top: offsetPosition,
+                                            behavior: 'smooth'
+                                        })
+                                    }
+                                }, 100);
+                            }}
                         >
                             <ArrowLeft />
                             Volver a Servicios
