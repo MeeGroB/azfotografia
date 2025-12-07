@@ -138,7 +138,7 @@ const Navbar = () => {
                             <a href="/#services" onClick={(e)=> { e.preventDefault(); navigateToSection('services'); }} className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
                             Servicios</a>
 
-                            <a href="/precios" onClick={(e)=> { /* precios es ruta distinta, dejamos normal */ }} className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
+                            <a href="/precios" className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
                             Precios</a>
 
                             <a href="/#gallery" onClick={(e)=> { e.preventDefault(); navigateToSection('gallery'); }} className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
