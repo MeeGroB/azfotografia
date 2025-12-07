@@ -6,19 +6,44 @@ const Navbar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     
     const [isScrolled, setIsScrolled] = useState(false);
-    const isHomePage = location.pathname === '/';
+    const isHomePage = window.location.pathname === '/';
 
-    // useEffect(()=> {
-    //     if(mobileMenuOpen) {
-    //         document.body.style.overflow = 'hidden';
-    //     } else {
-    //         document.body.style.overflow = 'unset';
-    //     }
+    const scrollToId = (id: string, delay = 100) => {
+        setTimeout(() => {
+            const element = document.getElementById(id);
+            if (element) {
+                const offset = 80;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            }
+        }, delay);
+    };
 
-    //      return ()=> {
-    //         document.body.style.overflow = 'unset';
-    //      }
-    // }, [mobileMenuOpen]);
+    const navigateToSection = (id: string) => {
+        const href = `/#${id}`;
+
+        if (isHomePage) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                window.location.hash = id;
+            }
+            setMobileMenuOpen(false);
+            return;
+        }
+
+
+        if ((window as any).REACT_APP_NAVIGATE) {
+            (window as any).REACT_APP_NAVIGATE('/');
+            scrollToId(id, 300);
+        } else {
+            window.location.href = href;
+        }
+
+        setMobileMenuOpen(false);
+    };
 
 
 
@@ -56,19 +81,37 @@ const Navbar = () => {
 
                     {/* Desktop menu */}
                     <div className="hidden md:flex items-center space-x-8">
-                        <a href="/#home" className={`font-medium transition-colors cursor-pointer whitespace-nowrap ${linkClasses}`}>Inicio</a>
+                        <a href="/#home" className={`font-medium transition-colors cursor-pointer whitespace-nowrap ${linkClasses}`} onClick={(e)=> {
+                            e.preventDefault();
+                            navigateToSection('home');
+                        }}>Inicio</a>
 
-                        <a href="/#about" className={`font-medium transition-colors cursor-pointer whitespace-nowrap ${linkClasses}`}>Sobre Mi</a>
+                        <a href="/#about" className={`font-medium transition-colors cursor-pointer whitespace-nowrap ${linkClasses}`} onClick={(e)=> {
+                            e.preventDefault();
+                            navigateToSection('about');
+                        }}>Sobre Mi</a>
 
-                        <a href="/#services" className={`font-medium transition-colors cursor-pointer whitespace-nowrap ${linkClasses}`}>Servicios</a>
+                        <a href="/#services" className={`font-medium transition-colors cursor-pointer whitespace-nowrap ${linkClasses}`} onClick={(e)=> {
+                            e.preventDefault();
+                            navigateToSection('services')
+                        }}>Servicios</a>
 
-                        <a href="/pricing" className={`font-medium transition-colors cursor-pointer whitespace-nowrap ${linkClasses}`}>Precios</a>
+                        <a href="/precios" className={`font-medium transition-colors cursor-pointer whitespace-nowrap ${linkClasses}`} >Precios</a>
 
-                        <a href="/#gallery" className={`font-medium transition-colors cursor-pointer whitespace-nowrap ${linkClasses}`}>Galería</a>
+                        <a href="/#gallery" className={`font-medium transition-colors cursor-pointer whitespace-nowrap ${linkClasses}`} onClick={(e)=> {
+                            e.preventDefault();
+                            navigateToSection('gallery');
+                        }}>Galería</a>
 
-                        <a href="/#albums" className={`font-medium transition-colors cursor-pointer whitespace-nowrap ${linkClasses}`}>Álbumes</a>
+                        <a href="/#albums" className={`font-medium transition-colors cursor-pointer whitespace-nowrap ${linkClasses}`} onClick={(e)=> {
+                            e.preventDefault();
+                            navigateToSection('albums');
+                        }}>Álbumes</a>
 
-                        <a href="/#contact" className='bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-dark transition-colors cursor-pointer whitespace-nowrap'>Contacto</a>
+                        <a href="/#contact" className='bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-dark transition-colors cursor-pointer whitespace-nowrap' onClick={(e)=> {
+                            e.preventDefault();
+                            navigateToSection('contact');
+                        }}>Contacto</a>
                     </div>
 
                     <button
@@ -86,25 +129,25 @@ const Navbar = () => {
                 {mobileMenuOpen && (
                     <div className="md:hidden bg-white border-t border-gray-200">
                         <div className="px-4 py-4 space-y-9 flex flex-col items-center">
-                            <a href="/#home" onClick={() => setMobileMenuOpen(false)} className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
+                            <a href="/#home" onClick={(e)=> { e.preventDefault(); navigateToSection('home'); }} className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
                             Inicio</a>
 
-                            <a href="/#about" onClick={() => setMobileMenuOpen(false)} className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
+                            <a href="/#about" onClick={(e)=> { e.preventDefault(); navigateToSection('about'); }} className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
                             Sobre Mi</a>
 
-                            <a href="/#services" onClick={() => setMobileMenuOpen(false)} className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
+                            <a href="/#services" onClick={(e)=> { e.preventDefault(); navigateToSection('services'); }} className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
                             Servicios</a>
 
-                            <a href="/pricing" onClick={() => setMobileMenuOpen(false)} className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
+                            <a href="/precios" onClick={(e)=> { /* precios es ruta distinta, dejamos normal */ }} className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
                             Precios</a>
 
-                            <a href="/#gallery" onClick={() => setMobileMenuOpen(false)} className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
+                            <a href="/#gallery" onClick={(e)=> { e.preventDefault(); navigateToSection('gallery'); }} className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
                             Galería</a>
 
-                            <a href="/#albums" onClick={() => setMobileMenuOpen(false)} className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
+                            <a href="/#albums" onClick={(e)=> { e.preventDefault(); navigateToSection('albums'); }} className='block w-full text-center text-gray-700 hover:text-primary font-medium cursor-pointer whitespace-nowrap'>
                             Álbumes</a>
 
-                            <a href="/#contact" onClick={() => setMobileMenuOpen(false)} className='inline-block w-auto bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-dark transition-colors cursor-pointer whitespace-nowrap text-center mx-auto'>
+                            <a href="/#contact" onClick={(e)=> { e.preventDefault(); navigateToSection('contact'); }} className='inline-block w-auto bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-dark transition-colors cursor-pointer whitespace-nowrap text-center mx-auto'>
                             Contacto</a>
                         </div>
 
