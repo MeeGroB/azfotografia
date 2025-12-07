@@ -173,7 +173,7 @@ const Footer = () => {
 
                 <p className="text-gray-400 text-base mt-2">
                     Hecho por {""}
-                    <a href="#" className="text-gray-300 hover:text-primary transition-colors duration-300">Pier Chávez Monteblanco</a>
+                    <a href="https://pierchavez.netlify.app/" className="text-gray-300 hover:text-primary transition-colors duration-300" target="_blank">Pier Chávez Monteblanco</a>
                 </p>
             </div>
 
